@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Button from "@mui/material/Button";
 import {sendApiPostRequest} from "./ApiRequest";
-import './Match.css'
+import './cssFilles/Match.css'
 
 function Match(props) {
     const {matchId,prop1, prop2, prop3, prop4, userId} = props;

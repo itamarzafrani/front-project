@@ -7,7 +7,7 @@ import TableLeague from "./Table-League";
 import TableLeagueLive from "./Table-League-Live";
 import {Box, Tab, Tabs} from "@mui/material";
 import {TabContext, TabList} from "@mui/lab";
-import './Wrapper.css'
+import './cssFilles/Wrapper.css'
 import CreateGame from './CreateGame';
 
 

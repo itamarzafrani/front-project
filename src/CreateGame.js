@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {sendApiGetRequest, sendApiPostRequest} from "./ApiRequest";
 import Button from '@mui/material/Button';
-import './CreateGame.css';
+import './cssFilles/CreateGame.css';
 import Match from './Match'
 import Logged from "./Logged";
-import './Table-League.css'
+import './cssFilles/Table-League.css'
 
 function CreateGame() {
 

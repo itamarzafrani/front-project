@@ -1,4 +1,4 @@
-import './MatchResult.css'
+import './cssFilles/MatchResult.css'
 
 const logos = [{name: 'Chelsea', src: '/Chelsea.png'}, {name: 'Barcelona', src: '/Barcelona.png'},
     {name: 'Bayren', src: '/Bayren.png'}, {name: 'Benfica', src: '/Benfica.png'},

@@ -1,6 +1,6 @@
 import './App.css';
 import * as React from 'react';
-import './Wrapper.css'
+import './cssFilles/Wrapper.css'
 import Login from "./Login";
 import {useEffect, useState} from "react";
 import Register from "./Register";

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {sendApiGetRequest} from "./ApiRequest";
 import MatchResult from "./MatchResult";
 import Logged from "./Logged";
-import './Table-League.css'
+import './cssFilles/Table-League.css'
 
 function LiveMatch() {
 

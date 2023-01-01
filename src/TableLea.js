@@ -8,7 +8,7 @@ import {styled} from "@mui/material/styles";
 import {tableCellClasses} from "@mui/material/TableCell";
 import {TableCell} from "@mui/material";
 import React  from "react";
-import './TableLea.css'
+import './cssFilles/TableLea.css'
 
 function TableLea(props) {
 

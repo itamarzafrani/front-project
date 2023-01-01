@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {sendApiGetRequest} from "./ApiRequest";
 import TableLea from "./TableLea";
 import Logged from "./Logged";
-import './Table-League.css'
+import './cssFilles/Table-League.css'
 
 
 
