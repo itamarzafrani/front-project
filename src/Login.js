@@ -11,8 +11,8 @@ const Login = () => {
     const userRef = useRef();
     const errRef = useRef();
 
-    const [username, setUsername] = useState('');
-    const [password, setPwd] = useState('');
+    const [username, setUsername] = useState("Shai123");
+    const [password, setPwd] = useState('Shai123!');
     const [userId, setId] = useState(null);
     const [errMsg, setErrMsg] = useState('');
     const [success, setSuccess] = useState(false);
