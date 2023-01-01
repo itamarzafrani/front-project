@@ -12,6 +12,7 @@ import CreateGame from './CreateGame';
 
 
 function Logged() {
+
     const {state} = useLocation();
     const activeMenuClass = ({isActive}) => (isActive ? "active-menu" : "non-active-menu");
 
@@ -29,39 +30,39 @@ function Logged() {
 
 
     return (
-        <div >
+        <div>
 
-                <Box sx={{width: '100%', typography: 'body1'}}>
-                    <TabContext value={value}>
-                        <Box sx={{borderBottom: 1, borderColor: 'divider', background: "#847F52"}}>
-                            <TabList onChange={handleChange} aria-label="lab API tabs example">
-                                {links.map((link) => {
-                                    return (
-                                        <NavLink style={{margin: 50, color: "black"}}
-                                                 className={activeMenuClass}
-                                                 to={link.to}>
-                                            <Tabs value={value} onChange={handleChange}>
-                                                <Tab style={{fontSize: 40}} label={link.text} value={link.NewValue}/>
-                                            </Tabs>
-                                        </NavLink>
-                                    )
-                                })}
+            <Box sx={{width: '100%', typography: 'body1'}}>
+                <TabContext value={value}>
+                    <Box sx={{borderBottom: 1, borderColor: 'divider', background: "#847F52"}}>
+                        <TabList onChange={handleChange} aria-label="lab API tabs example">
+                            {links.map((link) => {
+                                return (
+                                    <NavLink style={{margin: 50, color: "black"}}
+                                             className={activeMenuClass}
+                                             to={link.to}>
+                                        <Tabs value={value} onChange={handleChange}>
+                                            <Tab style={{fontSize: 40}} label={link.text} value={link.NewValue}/>
+                                        </Tabs>
+                                    </NavLink>
+                                )
+                            })}
 
-                                <h1 style={{marginBottom: 20, marginLeft: 1600, marginTop: 30, fontSize: 50}}>Football
-                                    Web</h1>
-                            </TabList>
-                        </Box>
-                    </TabContext>
-                </Box>
+                            <h1 style={{marginBottom: 20, marginLeft: 1600, marginTop: 30, fontSize: 50}}>Football
+                                Web</h1>
+                        </TabList>
+                    </Box>
+                </TabContext>
+            </Box>
 
 
-                <Routes>
-                    <Route path={"/LIVE-MATCH"} element={<LiveMatch/>}/>
-                    <Route path={"/LeagueTable"} element={<TableLeague/>}/>
-                    <Route path={"/LeagueTableLive"} element={<TableLeagueLive/>}/>
-                    <Route path={"/CreateGame"} element={<CreateGame/>}/>
-                    <Route path={"/Login"} element={<Login/>}/>
-                </Routes>
+            <Routes>
+                <Route path={"/LIVE-MATCH"} element={<LiveMatch/>}/>
+                <Route path={"/LeagueTable"} element={<TableLeague/>}/>
+                <Route path={"/LeagueTableLive"} element={<TableLeagueLive/>}/>
+                <Route path={"/CreateGame"} element={<CreateGame />}/>
+                <Route path={"/Login"} element={<Login/>}/>
+            </Routes>
 
 
         </div>

@@ -36,8 +36,12 @@ const Login = () => {
                     password: password
                 }, (response) => {
                     const userToSingIn = response.data;
+                if (response.data.errorCode===1){
+                    setErrMsg("USERNAME DIDNT FOUND")
+                }else if(response.data.errorCode===2){
+                    setErrMsg("PASSWORD OR USERNAME INCORRECT")
+                }
                     setAuth(username, password, userId);
-                    setErrMsg(userToSingIn.errorCode)
                     setUsername(userToSingIn.user.username)
                     setSuccess(userToSingIn.success)
 

@@ -1,8 +1,8 @@
-import { useRef, useState, useEffect } from "react";
-import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {sendApiGetRequest , sendApiPostRequest} from './ApiRequest';
-import { Link } from "react-router-dom";
+import {useRef, useState, useEffect} from "react";
+import {faCheck, faTimes, faInfoCircle} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {sendApiGetRequest, sendApiPostRequest} from './ApiRequest';
+import {Link} from "react-router-dom";
 import './index.css'
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
@@ -45,13 +45,12 @@ const Register = () => {
     }, [username, password, matchPwd])
 
     const handleSubmit = (e) => {
-
-                sendApiPostRequest("http://localhost:8989/create-account", {
-                    username: username,
-                    password: password,
-                }, (response) => {
-
-                  });
+        e.preventDefault()
+        sendApiPostRequest("http://localhost:8989/create-account", {
+            username: username,
+            password: password,
+        }, (response) => {
+        });
     }
 
     return (
@@ -65,11 +64,11 @@ const Register = () => {
             <section>
                 <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                 <h1>Register</h1>
-                <form >
+                <form>
                     <label htmlFor="username">
                         Username:
-                        <FontAwesomeIcon icon={faCheck} className={validName ? "valid" : "hide"} />
-                        <FontAwesomeIcon icon={faTimes} className={validName || !username ? "hide" : "invalid"} />
+                        <FontAwesomeIcon icon={faCheck} className={validName ? "valid" : "hide"}/>
+                        <FontAwesomeIcon icon={faTimes} className={validName || !username ? "hide" : "invalid"}/>
                     </label>
                     <input
                         type="text"
@@ -85,17 +84,17 @@ const Register = () => {
                         onBlur={() => setUserFocus(false)}
                     />
                     <p id="uidnote" className={userFocus && username && !validName ? "instructions" : "offscreen"}>
-                        <FontAwesomeIcon icon={faInfoCircle} />
-                        4 to 24 characters.<br />
-                        Must begin with a letter.<br />
+                        <FontAwesomeIcon icon={faInfoCircle}/>
+                        4 to 24 characters.<br/>
+                        Must begin with a letter.<br/>
                         Letters, numbers, underscores, hyphens allowed.
                     </p>
 
 
                     <label htmlFor="password">
                         Password:
-                        <FontAwesomeIcon icon={faCheck} className={validPwd ? "valid" : "hide"} />
-                        <FontAwesomeIcon icon={faTimes} className={validPwd || !password ? "hide" : "invalid"} />
+                        <FontAwesomeIcon icon={faCheck} className={validPwd ? "valid" : "hide"}/>
+                        <FontAwesomeIcon icon={faTimes} className={validPwd || !password ? "hide" : "invalid"}/>
                     </label>
                     <input
                         type="password"
@@ -109,17 +108,19 @@ const Register = () => {
                         onBlur={() => setPwdFocus(false)}
                     />
                     <p id="pwdnote" className={pwdFocus && !validPwd ? "instructions" : "offscreen"}>
-                        <FontAwesomeIcon icon={faInfoCircle} />
-                        8 to 24 characters.<br />
-                        Must include uppercase and lowercase letters, a number and a special character.<br />
-                        Allowed special characters: <span aria-label="exclamation mark">!</span> <span aria-label="at symbol">@</span> <span aria-label="hashtag">#</span> <span aria-label="dollar sign">$</span> <span aria-label="percent">%</span>
+                        <FontAwesomeIcon icon={faInfoCircle}/>
+                        8 to 24 characters.<br/>
+                        Must include uppercase and lowercase letters, a number and a special character.<br/>
+                        Allowed special characters: <span aria-label="exclamation mark">!</span> <span
+                        aria-label="at symbol">@</span> <span aria-label="hashtag">#</span> <span
+                        aria-label="dollar sign">$</span> <span aria-label="percent">%</span>
                     </p>
 
 
                     <label htmlFor="confirm_pwd">
                         Confirm Password:
-                        <FontAwesomeIcon icon={faCheck} className={validMatch && matchPwd ? "valid" : "hide"} />
-                        <FontAwesomeIcon icon={faTimes} className={validMatch || !matchPwd ? "hide" : "invalid"} />
+                        <FontAwesomeIcon icon={faCheck} className={validMatch && matchPwd ? "valid" : "hide"}/>
+                        <FontAwesomeIcon icon={faTimes} className={validMatch || !matchPwd ? "hide" : "invalid"}/>
                     </label>
                     <input
                         type="password"
@@ -133,14 +134,14 @@ const Register = () => {
                         onBlur={() => setMatchFocus(false)}
                     />
                     <p id="confirmnote" className={matchFocus && !validMatch ? "instructions" : "offscreen"}>
-                        <FontAwesomeIcon icon={faInfoCircle} />
+                        <FontAwesomeIcon icon={faInfoCircle}/>
                         Must match the first password input field.
                     </p>
 
                     <button onClick={handleSubmit} disabled={!validName || !validPwd || !validMatch}>Sign Up</button>
                 </form>
                 <p>
-                    Already registered?<br />
+                    Already registered?<br/>
                     <span className="line">
                             <Link to="/">Sign In</Link>
                         </span>
