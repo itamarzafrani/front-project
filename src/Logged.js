@@ -53,13 +53,7 @@ function Logged() {
                         </Box>
                     </TabContext>
                 </Box>
-                {/*<br/>*/}
-                {/*<br/>*/}
-                {/*<br/>*/}
-                {/*<h1 style={{fontFamily:}}>Welcome To Our Website!</h1>*/}
-                {/*<br/>*/}
-                {/*<h1>We are trying the best that you will enjoy from our website!</h1>*/}
-                {/*<h1>Have Fun!</h1>*/}
+
 
                 <Routes>
                     <Route path={"/LIVE-MATCH"} element={<LiveMatch/>}/>

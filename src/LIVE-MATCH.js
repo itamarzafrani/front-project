@@ -13,7 +13,7 @@ function LiveMatch() {
             sendApiGetRequest("http://localhost:8989/get-all-live-matches", (response) => {
                     const currentMatches = response.data;
                     setMatches(currentMatches)
-                    console.log( matches)
+                    console.log(matches)
                 }
             );
         }, 1000);
@@ -26,7 +26,11 @@ function LiveMatch() {
             <Logged/>
             <br/>
             <br/>
-            <h1 className='title-header'><u>Live Matches</u> </h1>
+            <h1 className='title-header'><u>Live Matches</u></h1>
+            <br/>
+            <br/>
+            {matches.length === 0 ?
+                <h1 className='message'>There Is No Live Matches Yet!</h1> : ""}
             {matches.map((match, index) => {
                 return (
                     <MatchResult data={match}/>

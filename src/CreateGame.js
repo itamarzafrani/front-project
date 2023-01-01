@@ -34,7 +34,7 @@ function CreateGame() {
             sendApiGetRequest("http://localhost:8989/get-all-teams", (response) => {
                     const currentTeams = response.data;
                     setTeams(currentTeams)
-                    console.log(teams)
+                    console.log(userid)
                 }
             );
         }, 1000);
