@@ -76,6 +76,7 @@ function CreateGame() {
             }, (response) => {
             }
         );
+
     }
 
 
@@ -90,7 +91,7 @@ function CreateGame() {
             <br/>
             <br/>
             <br/>
-            <select onChange={(e) => handleClick(e)} className="sizeOption" style={{fontSize:40,height:100,width:400,marginLeft: 1400, marginRight: 50}}>
+            <select onChange={(e) => handleClick(e)} className="sizeOption" style={{marginLeft: 1400}}>
                 <option disabled selected style={{color: "gray"}}>--select team 1--</option>
                 {
                     teams.map((team, i) => <option hidden={checkIfSame(team.name)} value={team.name}
@@ -103,7 +104,7 @@ function CreateGame() {
             <h1 style={{display: 'inline-block', color: "black"}}> VS. </h1>
 
 
-            <select onChange={(e) => handleClick2(e)} className="sizeOption" style={{fontSize:40,height:100,width:400,marginLeft: 50}}>
+            <select  onChange={(e) => handleClick2(e)} className="sizeOption" >
                 <option disabled selected style={{color: "gray"}}>--select team 2--</option>
                 {
                     teams.map((team, i) => <option hidden={checkIfSame(team.name)} value={team.name}

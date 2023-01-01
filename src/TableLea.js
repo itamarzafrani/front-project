@@ -72,7 +72,7 @@ function TableLea(props) {
     return (
         <div>
             <TableContainer className='table-decotrate' component={Paper}>
-                <Table sx={{maxWidth: 2000} } aria-label="customized table">
+                <Table className='table-width' aria-label="customized table">
                     <TableHead>
                         <TableRow>
                             <StyledTableCell>Place</StyledTableCell>

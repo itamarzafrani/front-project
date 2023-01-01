@@ -5,9 +5,11 @@ body{
 
 .sizeOption{
     position: relative;
-    font-size: 30px;
-    width: 280px;
-    height: 50px;
+    font-size: 40px;
+    width: 400px;
+    height: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
 
 }
 
@@ -36,6 +38,7 @@ body{
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    height: 100px;
 }
 
 .button-85:before {

@@ -52,7 +52,6 @@ const Register = () => {
                 }, (response) => {
 
                   });
-
     }
 
     return (
