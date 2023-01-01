@@ -2,7 +2,7 @@ import {useRef, useState, useEffect, useContext} from 'react';
 import './index.css'
 import AuthContext from "./context/AuthProvider";
 import {sendApiPostRequest} from "./ApiRequest";
-import {Link,  useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 
 const Login = () => {
@@ -37,8 +37,12 @@ const Login = () => {
                 }, (response) => {
                     const userToSingIn = response.data;
                     setAuth(username, password, userId);
-                    setErrMsg(userToSingIn.errorCode)
-                    setUsername(userToSingIn.user.username)
+                    if (userToSingIn.errorCode === 1)
+                        setErrMsg("USERNAME DIDNT FOUND")
+                    if (userToSingIn.errorCode === 2)
+                        setErrMsg("PASSWORD OR USERNAME INCORRECT")
+
+                        setUsername(userToSingIn.user.username)
                     setSuccess(userToSingIn.success)
                     console.log(response.data)
 
